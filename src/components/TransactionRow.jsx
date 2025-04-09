@@ -1,12 +1,13 @@
-import RemoveButton from "./ui/RemoveButton";
+export default function TransactionRow({transaction, removeTransaction}){
 
-export default function TransactionRow({id, type, amount}){
-  return (
-    <tr>
-      <td>{id}</td>
-      <td>{type}</td>
-      <td>{amount}</td>
-      <td><RemoveButton/></td>
-    </tr>
+  return(
+      <tr>
+          <td>{transaction.id}</td>
+          <td>{transaction.type}</td>
+          <td>{transaction.amount}</td>
+          <td>
+              <button onClick={()=> removeTransaction(transaction.id)} className="btn btn-sm btn-danger">X</button>
+          </td>
+      </tr>
   )
 }
